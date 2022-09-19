@@ -20,9 +20,13 @@ useEffect(()=>{
   function removeItemLS(){
     localStorage.removeItem('username')
   }
-// const getItemLS=()=>{
- 
-// }
+  
+  function addItemsSS(){
+    sessionStorage.setItem('username', 'Rues1234556')
+    sessionStorage.setItem('password','vweeee')
+    sessionStorage.setItem('email','ruej@gmail.com')
+  }
+  
 
   return (
     <div className="App">
@@ -31,7 +35,7 @@ useEffect(()=>{
         <p>Welcome user {username}!</p>
         <button onClick={addItemsLS}>Add</button>
         <button onClick={removeItemLS}>Remove item</button> 
-        {/* <button onClick={getItemLS}>Get item</button> */}
+        <button onClick={addItemsSS}>Add SS</button>
       </header>
     </div>
   );

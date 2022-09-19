@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react';
 import './App.css';
+import { Login } from './Login';
 
 //sessionStorage-clears on browser/tab close
 
@@ -36,6 +37,7 @@ useEffect(()=>{
         <button onClick={addItemsLS}>Add</button>
         <button onClick={removeItemLS}>Remove item</button> 
         <button onClick={addItemsSS}>Add SS</button>
+        <Login/>
       </header>
     </div>
   );

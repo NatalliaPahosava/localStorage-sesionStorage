@@ -1,22 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
 
+//sessionStorage-clears on browser/tab close
+
+// local Storage-clears manually
+//Javascript method (not only in React)
+ 
 function App() {
+
+  function addItemsLS(){
+    localStorage.setItem('username', 'jiho')
+    localStorage.setItem('password','mesa787888')
+    localStorage.setItem('email','mesaJiho@gmail.com')
+  }
+  function removeItemLS(){
+    localStorage.removeItem('username')
+  }
+const getItemLS=()=>{
+  return username=localStorage.getItem('username')
+  console.log(username)
+}
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>LS and SS</h1>
+        <button onClick={addItemsLS}>Add</button>
+        <button onClick={removeItemLS}>Remove item</button> 
       </header>
     </div>
   );

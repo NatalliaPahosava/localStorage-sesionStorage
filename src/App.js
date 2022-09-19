@@ -1,3 +1,4 @@
+import { useState,useEffect } from 'react';
 import './App.css';
 
 //sessionStorage-clears on browser/tab close
@@ -6,7 +7,11 @@ import './App.css';
 //Javascript method (not only in React)
  
 function App() {
-
+const [username,setUsername]=useState('')
+useEffect(()=>{
+  const username=localStorage.getItem('username')
+  setUsername(username)
+},[])
   function addItemsLS(){
     localStorage.setItem('username', 'jiho')
     localStorage.setItem('password','mesa787888')
@@ -15,17 +20,18 @@ function App() {
   function removeItemLS(){
     localStorage.removeItem('username')
   }
-const getItemLS=()=>{
-  return username=localStorage.getItem('username')
-  console.log(username)
-}
+// const getItemLS=()=>{
+ 
+// }
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>LS and SS</h1>
+        <p>Welcome user {username}!</p>
         <button onClick={addItemsLS}>Add</button>
         <button onClick={removeItemLS}>Remove item</button> 
+        {/* <button onClick={getItemLS}>Get item</button> */}
       </header>
     </div>
   );

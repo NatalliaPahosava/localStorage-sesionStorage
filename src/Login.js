@@ -6,8 +6,13 @@ export const Login = () => {
 
   useEffect(() => {
     const user = localStorage.getItem('user')
-    const formatedUser = JSON.parse(user) 
+    if (user){
+       const formatedUser = JSON.parse(user) 
     setEmail(formatedUser.email)
+    }else{
+        setEmail('user not logged in')
+    }
+   
   }, [])
 
   console.log(form) /// user {email:'jonathan',password:'1873838'}
@@ -36,6 +41,7 @@ export const Login = () => {
         <br />
         <button onClick={handleLogin}>Login</button>
       </form>
+      <button onClick={()=>localStorage.clear()}>Clear LS</button>
     </>
   )
 }
